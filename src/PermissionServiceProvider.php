@@ -1,5 +1,6 @@
 <?php
 
+namespace Firebed\Permission;
 
 use Illuminate\Contracts\Auth\Access\Authorizable;
 use Illuminate\Support\Facades\Gate;
