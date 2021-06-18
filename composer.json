@@ -9,11 +9,13 @@
     }
   ],
   "require": {
-    "php": "^8.0"
+    "php": "^8.0",
+    "illuminate/container": "^8.0",
+    "illuminate/contracts": "^8.0",
+    "illuminate/database": "^8.0"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-latest",
-    "laravel/framework": "^8.0"
+    "roave/security-advisories": "dev-latest"
   },
   "autoload": {
     "psr-4": {

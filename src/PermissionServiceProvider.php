@@ -24,6 +24,10 @@ class PermissionServiceProvider extends ServiceProvider
 
     private function registerConfig(): void
     {
+        if (!function_exists('config_path')) {
+            return;
+        }
+
         $this->mergeConfigFrom(__DIR__ . '/config/permission.php', 'permission');
 
         $this->publishes([__DIR__ . '/config/permission.php' => config_path('permission.php')], 'permission-config');
@@ -31,6 +35,10 @@ class PermissionServiceProvider extends ServiceProvider
 
     private function registerMigrations(): void
     {
+        if (!function_exists('database_path')) {
+            return;
+        }
+
         $this->loadMigrationsFrom(__DIR__ . '/Database/migrations');
 
         $this->publishes([__DIR__ . '/Database/migrations' => database_path('migrations')], 'permission-migrations');
