@@ -54,7 +54,7 @@ trait HasRoles
         return $this->roles->contains('name', $roles);
     }
 
-    public function hasAnyRole($roles): bool
+    public function hasAnyRole(...$roles): bool
     {
         return $this->hasRole($roles);
     }
