@@ -4,16 +4,10 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePermissionsTable extends Migration
-{
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+return new class extends Migration {
     public function up(): void
     {
-        Schema::create('permissions', function (Blueprint $table) {
+        Schema::create('permissions', static function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->timestamps();
@@ -29,4 +23,4 @@ class CreatePermissionsTable extends Migration
     {
         Schema::dropIfExists('permissions');
     }
-}
+};
