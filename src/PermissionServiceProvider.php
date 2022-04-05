@@ -50,11 +50,10 @@ class PermissionServiceProvider extends ServiceProvider
      */
     private function registerPermissions(): void
     {
-        Gate::before(function (Authorizable $user, string $ability) {
+        Gate::before(static function (Authorizable $user, string $ability) {
             if (method_exists($user, 'checkPermissionTo')) {
                 return $user->checkPermissionTo($ability) ?: NULL;
             }
-            return TRUE;
         });
     }
 }
