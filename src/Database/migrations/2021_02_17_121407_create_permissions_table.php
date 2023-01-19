@@ -10,6 +10,7 @@ return new class extends Migration {
         Schema::create('permissions', static function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('group_name')->nullable();
             $table->timestamps();
         });
     }
